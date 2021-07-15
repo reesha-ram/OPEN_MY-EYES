@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+ 
+
+{% load crispy_forms_tags %}
+
+ 
+
+{% block content %}
+
+{% load static %}
+
+<body>
+  <h2>Upload book</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    Pdf(same)<br>
+    <input type="file"  name="document"><br><br>
+    Language:
+    <select class="custom-select" name="lang">
+        <option value="en">English</option>
+        <option value="en-us">American English</option>
+        <option value="en-in">Indian English</option>
+        <option value="en-au">Australian English</option>
+        <option value="fr-fr">French</option>
+    </select><br><br>
+    <button type="submit" class="btn btn-primary">Upload book</button>
+  </form>
+  {% if music %}
+music ok
+   <audio controls>
+      <source src = "{% static 'speech.mp3'%}" type="audio/mpeg">
+   </audio>
+{% endif %}
+</body>
+
+{% endblock %}

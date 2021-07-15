@@ -1,0 +1,36 @@
+{% extends 'base.html'   %}
+{% block content %}
+<script>
+  function messageReader(whois)
+    {
+          var u = new SpeechSynthesisUtterance();
+          u.text = whois;
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          speechSynthesis.speak(u);
+
+    }
+</script>	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+<style>
+  .w3-lobster {
+  font-family: "Lobster", serif;
+}
+</style>
+ <main id="main" onclick="messageReader('');">
+       <br><br><br>
+ <script>
+ 	messageReader("welcome buddy , u can upload your book and listen to the audio book,u can also listen to the inspirational speech ");
+ </script>
+ </main>	
+<body>
+<div class="w3-container w3-lobster">
+    <p class="w3-xxxlarge">Welcome {% if user.is_authenticated %}{{ user.username }}{% else%} visitor {% endif %} !</p><br>
+        <p class="w3-xlarge">"I will lead the blind by ways they have not known, along unfamiliar paths I will guide them; I will turn the darkness into light before them and make the rough places smooth. These are the things I will do; I will not forsake them."-Isaiah 42:16</p>
+      </div>
+</center>
+</body>
+
+{% endblock %}
