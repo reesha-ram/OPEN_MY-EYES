@@ -1,4 +1,4 @@
-# OPEN_MY-EYES
+# OPEN_MY_EYES
 
 A web application for visually impaired people who face difficulty in reading.The main feature of
 the app is AUDIOBOOK .The pdf uploaded by the user will be converted into audiobook which
